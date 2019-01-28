@@ -6,7 +6,7 @@ const rp = require('request-promise-any')
 const Search = require('./models/search')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
