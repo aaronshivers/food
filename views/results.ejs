@@ -1,0 +1,17 @@
+<% include partials/top %>
+
+<div class="container mt-3 mb-3"">
+
+  <h1>Recipe Results</h1>
+
+  <ul class="list-group">
+  <% for (const i in recipies) { %>
+
+    <li class="list-group-item"><%= recipies[i].recipe.label %></li>
+
+  <% } %>
+  </ul>
+
+</div>
+
+<% include partials/bottom %>

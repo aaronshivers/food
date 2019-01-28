@@ -12,11 +12,16 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  const search = new Search('tacos')
+  res.render('search')
+})
 
-  search.getResults().then(recipies => {
-    res.send(recipies)
-  // res.render('index')
+app.get('/results', async (req, res) => {
+  const { find } = req.query
+
+  const search = new Search(find)
+
+  await search.getResults().then(recipies => {
+    res.render('results', { recipies })
   })
 })
 

@@ -1,0 +1,17 @@
+<% include partials/top %>
+
+<div class="container mt-3 mb-3">
+
+  <h1>Recipe Search</h1>
+
+  <form class="form-group" action="/results" method="GET">
+    
+    <input class="form-control" type="text" name="find" placeholder="Recipe name..." required>
+
+    <button class="btn btn-primary btn-block btn-lg mt-3">Submit</button>
+
+  </form>
+
+</div>
+
+<% include partials/bottom %>
