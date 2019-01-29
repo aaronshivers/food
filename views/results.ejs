@@ -1,17 +1,41 @@
 <% include partials/top %>
 
-<div class="container mt-3 mb-3"">
+<!-- <div class="container mt-3 mb-3"> -->
 
   <h1>Recipe Results</h1>
 
-  <ul class="list-group">
-  <% for (const i in recipies) { %>
+  <div class="row mt-3">
+    <div class="col-4">
+      <% for (const i in recipies) { %>
+      <div class="row mt-3">
+        <div class="col-4">
+          <img src="<%= recipies[i].recipe.image %>" class="card-img-top rounded-circle" alt="<%= recipies[i].recipe.label %>">
+        </div>
+        <div class="col-8">
+          <h5 class="text-warning"><%= recipies[i].recipe.label %></h5>
+          <h6><%= recipies[i].recipe.source %></h6>
+        </div>
 
-    <li class="list-group-item"><%= recipies[i].recipe.label %></li>
+      </div>
+      <% } %>
+    </div>
+    <div class="col-5">every</div>
+    <div class="col-3">body</div>
+  </div>
 
-  <% } %>
-  </ul>
+<!--   <div class="card-columns">
+    <% for (const i in recipies) { %>
+    <a href="<%= recipies[i].recipe.shareAs %>">
+      <div class="card">
+        <img src="<%= recipies[i].recipe.image %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= recipies[i].recipe.label %></h5>
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div> -->
 
-</div>
+<!-- </div> -->
 
 <% include partials/bottom %>

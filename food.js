@@ -15,12 +15,12 @@ app.get('/', (req, res) => {
   res.render('search')
 })
 
-app.get('/results', async (req, res) => {
+app.get('/results', (req, res) => {
   const { find } = req.query
 
   const search = new Search(find)
 
-  await search.getResults().then(recipies => {
+  search.getResults().then(recipies => {
     res.render('results', { recipies })
   })
 })
